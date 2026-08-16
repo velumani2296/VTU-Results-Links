@@ -874,36 +874,31 @@
 
 
             <!-- CALCULATORS -->
-            <section class="vtusync-tools-card">
+<section class="vtusync-tools-card">
 
-                <div>
+    <div>
+        <span class="vtusync-info-icon">
+            %
+        </span>
 
-                    <span class="vtusync-info-icon vtusync-icon-light">
-                        %
-                    </span>
+        <h3>Calculate Your SGPA &amp; CGPA</h3>
 
-                    <h3>Calculate Your SGPA &amp; CGPA</h3>
+        <p>
+            Got your results? Calculate your SGPA or overall
+            CGPA instantly with VTUSync.
+        </p>
+    </div>
 
-                    <p>
-                        Got your results? Calculate your SGPA or overall
-                        CGPA instantly with VTUSync.
-                    </p>
+    <div class="vtusync-tools-actions">
+    <a href="https://vtusync.in/calculator/sgpa-calculator/" class="vtusync-tool-btn vtusync-btn-sgpa">
+        SGPA Calculator
+    </a>
+    <a href="https://vtusync.in/calculator/cgpa-calculator/" class="vtusync-tool-btn vtusync-btn-cgpa">
+        CGPA Calculator
+    </a>
+</div>
 
-                </div>
-
-                <div class="vtusync-tools-actions">
-
-                    <a href="https://vtusync.in/calculator/sgpa-calculator/" class="vtusync-tool-btn">
-                        SGPA Calculator
-                    </a>
-
-                    <a href="https://vtusync.in/calculator/cgpa-calculator/" class="vtusync-tool-btn">
-                        CGPA Calculator
-                    </a>
-
-                </div>
-
-            </section>
+</section>
 
 
             <!-- NOMENCLATURE -->
@@ -1140,48 +1135,71 @@
 
 
 /* =========================================================
-   UPDATED BADGE
+   UPDATED BADGE - MODERN LIVE PILL
    ========================================================= */
 
 .vtusync-updated-badge {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
-
+    gap: 0.6rem;
     flex-shrink: 0;
 
-    padding: 0.55rem 0.85rem;
+    padding: 0.45rem 1rem;
 
-    border: 1px solid var(--cs-color-border);
+    /* Crisp, high-tech pill border */
+    border: 1px solid rgba(34, 197, 94, 0.3);
     border-radius: 999px;
 
-    background: var(--cs-layout-background);
+    /* Subtle glassmorphic gradient background */
+    background: linear-gradient(
+        145deg,
+        rgba(34, 197, 94, 0.1) 0%,
+        rgba(34, 197, 94, 0.02) 100%
+    );
 
-    color: var(--cs-color-secondary);
-
+    /* Text styling */
+    color: var(--cs-color-primary);
     font-size: 0.72rem;
-    font-weight: 650;
+    font-weight: 750;
+    letter-spacing: 0.03em;
 
-    box-shadow:
-        3px 3px 8px rgba(
-            var(--cs-color-box-shadow-rgb),
-            0.06
-        ),
-        -3px -3px 8px rgba(255,255,255,0.35);
+    /* Soft ambient glow and glass edge */
+    box-shadow: 
+        0 4px 15px rgba(34, 197, 94, 0.08),
+        inset 0 1px 1px rgba(255, 255, 255, 0.05);
+        
+    backdrop-filter: blur(8px);
 }
 
+/* =========================================================
+   PULSING STATUS DOT
+   ========================================================= */
+
 .vtusync-status-dot {
-    width: 7px;
-    height: 7px;
-
+    width: 8px;
+    height: 8px;
     flex-shrink: 0;
-
     border-radius: 50%;
-
+    
+    /* Vibrant live green */
     background: #22c55e;
+    
+    /* Setup for the pulse animation */
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.5);
+    animation: vtusync-pulse-dot 2s infinite cubic-bezier(0.66, 0, 0, 1);
+}
 
-    box-shadow:
-        0 0 0 3px rgba(34,197,94,0.1);
+/* Trending heartbeat/pulse animation */
+@keyframes vtusync-pulse-dot {
+    0% {
+        box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.5);
+    }
+    70% {
+        box-shadow: 0 0 0 7px rgba(34, 197, 94, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+    }
 }
 
 
@@ -1303,29 +1321,40 @@
 
 
 /* =========================================================
-   LATEST TAG
+   LATEST TAG - PREMIUM AMBER/GOLD STYLE
    ========================================================= */
 
 .vtusync-result-tag {
     display: inline-flex;
+    align-items: center;
 
-    margin-bottom: 0.45rem;
+    margin-bottom: 0.6rem;
+    padding: 0.35rem 0.85rem;
 
-    padding: 0.3rem 0.6rem;
-
+    /* Crisp golden border */
+    border: 1px solid rgba(245, 158, 11, 0.3) !important;
     border-radius: 999px;
 
-    background: rgba(34,197,94,0.1) !important;
+    /* Soft amber gradient background for a modern glass effect */
+    background: linear-gradient(
+        135deg, 
+        rgba(245, 158, 11, 0.15) 0%, 
+        rgba(217, 119, 6, 0.05) 100%
+    ) !important;
 
-    color: #16a34a !important;
+    /* Vibrant gold text for excellent readability on dark themes */
+    color: #fbbf24 !important; 
 
-    font-size: 0.64rem;
+    font-size: 0.65rem;
     font-weight: 800;
-
-    letter-spacing: 0.04em;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
-}
 
+    /* Subtle warm glow to make the badge pop */
+    box-shadow: 
+        0 0 12px rgba(245, 158, 11, 0.12),
+        inset 0 0 8px rgba(245, 158, 11, 0.05);
+}
 
 /* =========================================================
    GROUPS
@@ -1481,19 +1510,23 @@
 .vtusync-results-page a.vtusync-result-btn-cbcs,
 .vtusync-results-page a.vtusync-result-btn-cbcs:visited {
     background: var(--cs-layout-background) !important;
-
-    color: var(--cs-color-primary) !important;
-
-    border-color: var(--cs-color-border) !important;
+    
+    /* Vibrant green text */
+    color: #22c55e !important; 
+    
+    /* Soft green border matching the Non-CBCS style */
+    border-color: rgba(34, 197, 94, 0.25) !important; 
 }
 
 .vtusync-result-btn-cbcs:hover,
 .vtusync-results-page a.vtusync-result-btn-cbcs:hover {
-    background: var(--cs-color-primary) !important;
-
-    color: var(--cs-color-button-contrast) !important;
-
-    border-color: var(--cs-color-primary) !important;
+    /* Solid green background on hover */
+    background: #22c55e !important; 
+    
+    /* White text on hover */
+    color: #ffffff !important; 
+    
+    border-color: #22c55e !important;
 }
 
 
@@ -1639,78 +1672,97 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
-    background:
-        linear-gradient(
-            135deg,
-            var(--cs-color-primary),
-            var(--cs-color-secondary)
-        );
-
-    border: 0;
-
-    color: #fff;
-}
-
-.vtusync-tools-card h3 {
-    color: #fff;
-}
-
-.vtusync-tools-card p {
-    color: rgba(255,255,255,0.78);
-}
-
-.vtusync-icon-light {
-    background: rgba(255,255,255,0.1) !important;
-    border-color: rgba(255,255,255,0.15) !important;
-    color: #fff !important;
+    /* Inherits background, padding, and borders from the shared .vtusync-info-card rule */
 }
 
 .vtusync-tools-actions {
     display: flex;
     flex-wrap: wrap;
     gap: 0.6rem;
-
     margin-top: 1.5rem;
 }
 
+/* =========================================================
+   BASE CALCULATOR BUTTONS
+   ========================================================= */
+
 .vtusync-tool-btn {
     display: inline-flex;
-
     align-items: center;
     justify-content: center;
-
+    
     min-height: 42px;
-
-    padding: 0.65rem 1rem;
-
-    border: 0;
+    padding: 0.65rem 1.25rem;
+    
     border-radius: 999px;
-
-    background: #fff !important;
-
-    color: var(--cs-color-primary) !important;
-
+    background: var(--cs-layout-background) !important;
+    
     font-size: 0.78rem;
-    font-weight: 700;
-
+    font-weight: 750;
     text-decoration: none;
-
+    
+    /* Soft shadow to match the claymorphic card style */
     box-shadow:
-        4px 4px 9px rgba(0,0,0,0.12),
-        -3px -3px 8px rgba(255,255,255,0.15);
+        4px 4px 9px rgba(var(--cs-color-box-shadow-rgb), 0.12),
+        -3px -3px 8px rgba(255,255,255,0.08);
+        
+    transition: 
+        transform 0.2s ease, 
+        box-shadow 0.2s ease, 
+        background 0.2s ease, 
+        color 0.2s ease;
+}
 
-    transition:
-        transform 0.18s ease,
-        opacity 0.18s ease;
+/* =========================================================
+   SGPA BUTTON (ELECTRIC BLUE)
+   ========================================================= */
+
+.vtusync-btn-sgpa {
+    color: #3b82f6 !important;
+    border: 1px solid rgba(59, 130, 246, 0.3) !important;
+}
+
+.vtusync-btn-sgpa:hover {
+    background: #3b82f6 !important;
+    color: #ffffff !important;
+    border-color: #3b82f6 !important;
+    
+    transform: translateY(-2px);
+    box-shadow: 
+        0 6px 14px rgba(59, 130, 246, 0.25),
+        -2px -2px 6px rgba(255,255,255,0.1);
+}
+
+/* =========================================================
+   CGPA BUTTON (VIBRANT ROSE)
+   ========================================================= */
+
+.vtusync-btn-cgpa {
+    color: #f43f5e !important;
+    border: 1px solid rgba(244, 63, 94, 0.3) !important;
+}
+
+.vtusync-btn-cgpa:hover {
+    background: #f43f5e !important;
+    color: #ffffff !important;
+    border-color: #f43f5e !important;
+    
+    transform: translateY(-2px);
+    box-shadow: 
+        0 6px 14px rgba(244, 63, 94, 0.25),
+        -2px -2px 6px rgba(255,255,255,0.1);
 }
 
 .vtusync-tool-btn:hover {
-    color: var(--cs-color-primary) !important;
-
-    opacity: 0.9;
-
     transform: translateY(-1px);
+    
+    background: var(--cs-color-button-hover) !important;
+    border-color: var(--cs-color-button-hover) !important;
+    color: var(--cs-color-button-hover-contrast) !important;
+    
+    box-shadow:
+        5px 5px 11px rgba(var(--cs-color-box-shadow-rgb), 0.14),
+        -5px -5px 11px rgba(255,255,255,0.35);
 }
 
 
